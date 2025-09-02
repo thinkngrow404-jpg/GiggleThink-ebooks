@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://thinkngrow404-jpg.github.io/sitemap.xml
