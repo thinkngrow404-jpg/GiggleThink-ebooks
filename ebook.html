@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>My Ebooks</title>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WE85KYJP0Z"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-WE85KYJP0Z');
+  <!-- Google Analytics: paste this in the head (keep the ID you received) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-WE85KYJP0Z"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-WE85KYJP0Z');
+  </script>
+
+  <style>
+    /* Page styles */
     body {
       font-family: Arial, sans-serif;
       background: #f4f4f9;
@@ -37,7 +43,7 @@
     .ebook-card:hover {
       transform: scale(1.05);
     }
-    .ebook-card img {
+    .ebook-card .img {
       width: 100%;
       border-radius: 8px;
       background: #e0e0e0;
@@ -47,6 +53,7 @@
       justify-content: center;
       color: #666;
       font-size: 14px;
+      margin-bottom: 10px;
     }
     .ebook-card h3 {
       margin: 10px 0;
@@ -68,7 +75,7 @@
     .download-btn:hover {
       background: #388E3C;
     }
-    
+
     /* Modal Styles */
     .modal {
       display: none;
@@ -151,7 +158,7 @@
       background: #ccc;
       cursor: not-allowed;
     }
-    
+
     /* Success message */
     .success-message {
       background: #d4edda;
@@ -162,7 +169,7 @@
       margin-bottom: 20px;
       display: none;
     }
-    
+
     /* Download section */
     .download-section {
       display: none;
@@ -182,7 +189,7 @@
     .final-download-btn:hover {
       background: #0056b3;
     }
-    
+
     .privacy-note {
       font-size: 12px;
       color: #666;
@@ -210,46 +217,46 @@
 
     <div class="ebook-card">
       <div class="img" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">Ebook 3</div>
-      <h3>What We Do & Why We Do</h3>
+      <h3>What We Do &amp; Why We Do</h3>
       <button class="download-btn" onclick="openModal('What We Do & Why We Do', 'ebook3.pdf')">📥 Get Free Ebook</button>
     </div>
   </div>
 
   <!-- Modal -->
-  <div id="emailModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <h2>📖 Get Your Free Ebook</h2>
+  <div id="emailModal" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-labelledby="modalTitle">
+      <span class="close" onclick="closeModal()" aria-label="Close">&times;</span>
+      <h2 id="modalTitle">📖 Get Your Free Ebook</h2>
       <p id="modalEbookTitle" style="font-weight: bold; color: #4CAF50; margin-bottom: 20px;"></p>
-      
+
       <div class="success-message" id="successMessage">
         ✅ Email submitted successfully! Your download is ready below.
       </div>
-      
+
       <form id="emailForm">
         <div class="form-group">
           <label for="userName">Your Name *</label>
-          <input type="text" id="userName" required placeholder="Enter your full name">
+          <input type="text" id="userName" required placeholder="Enter your full name" />
         </div>
-        
+
         <div class="form-group">
           <label for="userEmail">Email Address *</label>
-          <input type="email" id="userEmail" required placeholder="Enter your email address">
+          <input type="email" id="userEmail" required placeholder="Enter your email address" />
         </div>
-        
+
         <button type="submit" class="submit-btn" id="submitBtn">
           📧 Get My Free Ebook
         </button>
-        
+
         <div class="privacy-note">
           🔒 We respect your privacy. Your email will only be used to send you valuable content and updates. No spam, unsubscribe anytime.
         </div>
       </form>
-      
+
       <div class="download-section" id="downloadSection">
         <h3>🎉 Thank you!</h3>
         <p>Your ebook is ready for download:</p>
-        <a href="#" class="final-download-btn" id="finalDownloadBtn" target="_blank">
+        <a href="#" class="final-download-btn" id="finalDownloadBtn" target="_blank" rel="noopener">
           📥 Download Now
         </a>
       </div>
@@ -258,25 +265,27 @@
 
   <script>
     let currentEbookUrl = '';
-    let submittedEmails = []; // In real implementation, this would be sent to your server
-    
+    let submittedEmails = []; // For demo only. Do not rely on client-side storage for real subscribers.
+
     function openModal(ebookTitle, ebookUrl) {
       document.getElementById('emailModal').style.display = 'block';
       document.getElementById('modalEbookTitle').textContent = ebookTitle;
       currentEbookUrl = ebookUrl;
-      
+
       // Reset form
       document.getElementById('emailForm').style.display = 'block';
       document.getElementById('downloadSection').style.display = 'none';
       document.getElementById('successMessage').style.display = 'none';
       document.getElementById('userName').value = '';
       document.getElementById('userEmail').value = '';
+      document.getElementById('emailModal').setAttribute('aria-hidden', 'false');
     }
-    
+
     function closeModal() {
       document.getElementById('emailModal').style.display = 'none';
+      document.getElementById('emailModal').setAttribute('aria-hidden', 'true');
     }
-    
+
     // Close modal when clicking outside
     window.onclick = function(event) {
       const modal = document.getElementById('emailModal');
@@ -284,24 +293,24 @@
         closeModal();
       }
     }
-    
+
     // Handle form submission
     document.getElementById('emailForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      
+
       const name = document.getElementById('userName').value.trim();
       const email = document.getElementById('userEmail').value.trim();
-      
+
       if (!name || !email) {
         alert('Please fill in all required fields.');
         return;
       }
-      
+
       // Disable submit button
       const submitBtn = document.getElementById('submitBtn');
       submitBtn.disabled = true;
       submitBtn.textContent = 'Processing...';
-      
+
       // Simulate API call delay
       setTimeout(() => {
         // Store email (in real app, send to your server/database)
@@ -311,27 +320,27 @@
           ebook: document.getElementById('modalEbookTitle').textContent,
           timestamp: new Date().toISOString()
         });
-        
+
         // Log to console (for demonstration - remove in production)
         console.log('New email submission:', {
           name: name,
           email: email,
           ebook: document.getElementById('modalEbookTitle').textContent
         });
-        
+
         // Show success and download
         document.getElementById('emailForm').style.display = 'none';
         document.getElementById('successMessage').style.display = 'block';
         document.getElementById('downloadSection').style.display = 'block';
         document.getElementById('finalDownloadBtn').href = currentEbookUrl;
-        
+
         // Re-enable submit button for next use
         submitBtn.disabled = false;
         submitBtn.textContent = '📧 Get My Free Ebook';
-        
+
       }, 1500);
     });
-    
+
     // Auto-close modal after download
     document.getElementById('finalDownloadBtn').addEventListener('click', function() {
       setTimeout(() => {
@@ -341,4 +350,4 @@
   </script>
 
 </body>
-</html>
+  </html>
