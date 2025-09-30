@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 } else {
     // Direct access to PHP file, redirect to form
-    header("Location: contact.html");
+    header("Location:contact.html");
     exit;
 }
 ?>
