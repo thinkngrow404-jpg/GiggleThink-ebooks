@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
 Sitemap:https://thinkngrow404-jpg.github.io/GiggleThink-ebooks/sitemap.xml
