@@ -4,18 +4,16 @@
   <meta charset="UTF-8" />
   <title>My Ebooks</title>
 
-  <!-- Google Analytics: paste this in the head (keep the ID you received) -->
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-WE85KYJP0Z"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-WE85KYJP0Z');
   </script>
 
   <style>
-    /* Page styles */
     body {
       font-family: Arial, sans-serif;
       background: #f4f4f9;
@@ -46,13 +44,13 @@
     .ebook-card .img {
       width: 100%;
       border-radius: 8px;
-      background: #e0e0e0;
       height: 300px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #666;
-      font-size: 14px;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
       margin-bottom: 10px;
     }
     .ebook-card h3 {
@@ -76,7 +74,6 @@
       background: #388E3C;
     }
 
-    /* Modal Styles */
     .modal {
       display: none;
       position: fixed;
@@ -95,17 +92,10 @@
       width: 90%;
       max-width: 400px;
       position: relative;
-      animation: slideIn 0.3s ease;
-    }
-    @keyframes slideIn {
-      from { transform: translateY(-50px); opacity: 0; }
-      to { transform: translateY(0); opacity: 1; }
     }
     .close {
       color: #aaa;
-      float: right;
       font-size: 28px;
-      font-weight: bold;
       cursor: pointer;
       position: absolute;
       right: 15px;
@@ -113,10 +103,6 @@
     }
     .close:hover {
       color: black;
-    }
-    .modal h2 {
-      color: #333;
-      margin-bottom: 20px;
     }
     .form-group {
       margin-bottom: 20px;
@@ -136,10 +122,6 @@
       font-size: 16px;
       box-sizing: border-box;
     }
-    .form-group input:focus {
-      border-color: #4CAF50;
-      outline: none;
-    }
     .submit-btn {
       width: 100%;
       padding: 12px;
@@ -149,17 +131,10 @@
       border-radius: 6px;
       font-size: 16px;
       cursor: pointer;
-      transition: background 0.3s;
     }
     .submit-btn:hover {
       background: #388E3C;
     }
-    .submit-btn:disabled {
-      background: #ccc;
-      cursor: not-allowed;
-    }
-
-    /* Success message */
     .success-message {
       background: #d4edda;
       border: 1px solid #c3e6cb;
@@ -169,11 +144,8 @@
       margin-bottom: 20px;
       display: none;
     }
-
-    /* Download section */
     .download-section {
       display: none;
-      text-align: center;
       margin-top: 20px;
     }
     .final-download-btn {
@@ -184,170 +156,126 @@
       text-decoration: none;
       border-radius: 6px;
       font-size: 18px;
-      transition: background 0.3s;
     }
     .final-download-btn:hover {
       background: #0056b3;
-    }
-
-    .privacy-note {
-      font-size: 12px;
-      color: #666;
-      margin-top: 15px;
-      line-height: 1.4;
     }
   </style>
 </head>
 <body>
 
-  <h1>📚 My Free Ebooks</h1>
+<h1>📚 My Free Ebooks</h1>
 
-  <div class="ebook-container">
-    <div class="ebook-card">
-      <div class="img" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">Ebook 1</div>
-      <h3>Master AI For Daily Productivity</h3>
-      <button class="download-btn" onclick="openModal('Master AI For Daily Productivity', 'ebook1.pdf')">📥 Get Free Ebook</button>
-    </div>
+<div class="ebook-container">
 
-    <div class="ebook-card">
-      <div class="img" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">Ebook 2</div>
-      <h3>The Science of Intuition</h3>
-      <button class="download-btn" onclick="openModal('The Science of Intuition', 'ebook2.pdf')">📥 Get Free Ebook</button>
+  <!-- Ebook 1 -->
+  <div class="ebook-card">
+    <div class="img" style="background: linear-gradient(135deg, #667eea, #764ba2);">
+      Master AI
     </div>
-
-    <div class="ebook-card">
-      <div class="img" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">Ebook 3</div>
-      <h3>What We Do &amp; Why We Do</h3>
-      <button class="download-btn" onclick="openModal('What We Do & Why We Do', 'ebook3.pdf')">📥 Get Free Ebook</button>
-    </div>
+    <h3>Master AI For Daily Productivity</h3>
+    <button class="download-btn"
+      onclick="openModal('Master AI For Daily Productivity','ebook1.pdf')">
+      📥 Get Free Ebook
+    </button>
   </div>
 
-  <!-- Modal -->
-  <div id="emailModal" class="modal" aria-hidden="true">
-    <div class="modal-content" role="dialog" aria-labelledby="modalTitle">
-      <span class="close" onclick="closeModal()" aria-label="Close">&times;</span>
-      <h2 id="modalTitle">📖 Get Your Free Ebook</h2>
-      <p id="modalEbookTitle" style="font-weight: bold; color: #4CAF50; margin-bottom: 20px;"></p>
-
-      <div class="success-message" id="successMessage">
-        ✅ Email submitted successfully! Your download is ready below.
-      </div>
-
-      <form id="emailForm">
-        <div class="form-group">
-          <label for="userName">Your Name *</label>
-          <input type="text" id="userName" required placeholder="Enter your full name" />
-        </div>
-
-        <div class="form-group">
-          <label for="userEmail">Email Address *</label>
-          <input type="email" id="userEmail" required placeholder="Enter your email address" />
-        </div>
-
-        <button type="submit" class="submit-btn" id="submitBtn">
-          📧 Get My Free Ebook
-        </button>
-
-        <div class="privacy-note">
-          🔒 We respect your privacy. Your email will only be used to send you valuable content and updates. No spam, unsubscribe anytime.
-        </div>
-      </form>
-
-      <div class="download-section" id="downloadSection">
-        <h3>🎉 Thank you!</h3>
-        <p>Your ebook is ready for download:</p>
-        <a href="#" class="final-download-btn" id="finalDownloadBtn" target="_blank" rel="noopener">
-          📥 Download Now
-        </a>
-      </div>
+  <!-- Ebook 2 -->
+  <div class="ebook-card">
+    <div class="img" style="background: linear-gradient(135deg, #f093fb, #f5576c);">
+      Intuition
     </div>
+    <h3>The Science of Intuition</h3>
+    <button class="download-btn"
+      onclick="openModal('The Science of Intuition','ebook2.pdf')">
+      📥 Get Free Ebook
+    </button>
   </div>
 
-  <script>
-    let currentEbookUrl = '';
-    let submittedEmails = []; // For demo only. Do not rely on client-side storage for real subscribers.
+  <!-- Ebook 3 -->
+  <div class="ebook-card">
+    <div class="img" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">
+      Psychology
+    </div>
+    <h3>What We Do & Why We Do</h3>
+    <button class="download-btn"
+      onclick="openModal('What We Do & Why We Do','ebook3.pdf')">
+      📥 Get Free Ebook
+    </button>
+  </div>
 
-    function openModal(ebookTitle, ebookUrl) {
-      document.getElementById('emailModal').style.display = 'block';
-      document.getElementById('modalEbookTitle').textContent = ebookTitle;
-      currentEbookUrl = ebookUrl;
+  <!-- Ebook 4 -->
+  <div class="ebook-card">
+    <div class="img" style="background: linear-gradient(135deg, #ff9a9e, #fad0c4);">
+      Thinking Clearly
+    </div>
+    <h3>Thinking Clearly</h3>
+    <button class="download-btn"
+      onclick="openModal('Thinking Clearly','ebook4.pdf')">
+      📥 Get Free Ebook
+    </button>
+  </div>
 
-      // Reset form
-      document.getElementById('emailForm').style.display = 'block';
-      document.getElementById('downloadSection').style.display = 'none';
-      document.getElementById('successMessage').style.display = 'none';
-      document.getElementById('userName').value = '';
-      document.getElementById('userEmail').value = '';
-      document.getElementById('emailModal').setAttribute('aria-hidden', 'false');
-    }
+</div>
 
-    function closeModal() {
-      document.getElementById('emailModal').style.display = 'none';
-      document.getElementById('emailModal').setAttribute('aria-hidden', 'true');
-    }
+<!-- Modal -->
+<div id="emailModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h2>📖 Get Your Free Ebook</h2>
+    <p id="modalEbookTitle" style="font-weight:bold;color:#4CAF50;"></p>
 
-    // Close modal when clicking outside
-    window.onclick = function(event) {
-      const modal = document.getElementById('emailModal');
-      if (event.target === modal) {
-        closeModal();
-      }
-    }
+    <div class="success-message" id="successMessage">
+      ✅ Email submitted successfully! Your download is ready below.
+    </div>
 
-    // Handle form submission
-    document.getElementById('emailForm').addEventListener('submit', function(e) {
-      e.preventDefault();
+    <form id="emailForm">
+      <div class="form-group">
+        <label>Your Name *</label>
+        <input type="text" id="userName" required>
+      </div>
 
-      const name = document.getElementById('userName').value.trim();
-      const email = document.getElementById('userEmail').value.trim();
+      <div class="form-group">
+        <label>Email Address *</label>
+        <input type="email" id="userEmail" required>
+      </div>
 
-      if (!name || !email) {
-        alert('Please fill in all required fields.');
-        return;
-      }
+      <button type="submit" class="submit-btn">
+        📧 Get My Free Ebook
+      </button>
+    </form>
 
-      // Disable submit button
-      const submitBtn = document.getElementById('submitBtn');
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Processing...';
+    <div class="download-section" id="downloadSection">
+      <h3>🎉 Thank you!</h3>
+      <a href="#" class="final-download-btn"
+         id="finalDownloadBtn" target="_blank">
+        📥 Download Now
+      </a>
+    </div>
+  </div>
+</div>
 
-      // Simulate API call delay
-      setTimeout(() => {
-        // Store email (in real app, send to your server/database)
-        submittedEmails.push({
-          name: name,
-          email: email,
-          ebook: document.getElementById('modalEbookTitle').textContent,
-          timestamp: new Date().toISOString()
-        });
+<script>
+let currentEbookUrl = '';
 
-        // Log to console (for demonstration - remove in production)
-        console.log('New email submission:', {
-          name: name,
-          email: email,
-          ebook: document.getElementById('modalEbookTitle').textContent
-        });
+function openModal(title, url){
+  document.getElementById('emailModal').style.display='block';
+  document.getElementById('modalEbookTitle').textContent=title;
+  currentEbookUrl=url;
+}
 
-        // Show success and download
-        document.getElementById('emailForm').style.display = 'none';
-        document.getElementById('successMessage').style.display = 'block';
-        document.getElementById('downloadSection').style.display = 'block';
-        document.getElementById('finalDownloadBtn').href = currentEbookUrl;
+function closeModal(){
+  document.getElementById('emailModal').style.display='none';
+}
 
-        // Re-enable submit button for next use
-        submitBtn.disabled = false;
-        submitBtn.textContent = '📧 Get My Free Ebook';
-
-      }, 1500);
-    });
-
-    // Auto-close modal after download
-    document.getElementById('finalDownloadBtn').addEventListener('click', function() {
-      setTimeout(() => {
-        closeModal();
-      }, 2000);
-    });
-  </script>
+document.getElementById('emailForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  document.getElementById('emailForm').style.display='none';
+  document.getElementById('successMessage').style.display='block';
+  document.getElementById('downloadSection').style.display='block';
+  document.getElementById('finalDownloadBtn').href=currentEbookUrl;
+});
+</script>
 
 </body>
-  </html>
+</html>
