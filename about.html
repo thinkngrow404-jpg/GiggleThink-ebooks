@@ -1,264 +1,194 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | GiggleThink</title>
 
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>About Priya | Science &amp; Spirituality</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    colors: {
-                        "primary": "#7317cf",
-                        "background-light": "#f7f6f8",
-                        "background-dark": "#191121",
-                    },
-                    fontFamily: {
-                        "display": ["Space Grotesk", "sans-serif"]
-                    },
-                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
-                },
-            },
-        }
-    </script>
-<style>
-        body {
-            font-family: 'Space Grotesk', sans-serif;
-        }
-        .glass-card {
-            background: rgba(115, 23, 207, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(115, 23, 207, 0.1);
-        }
-    </style>
-<style>
-    body {
-      min-height: max(884px, 100dvh);
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
     }
+
+    body {
+      background: #0f0f14;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    /* NAV */
+    nav {
+      padding: 20px 0;
+    }
+
+    .nav-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    nav h2 {
+      font-weight: 600;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #ccc;
+      font-size: 14px;
+    }
+
+    nav ul li a:hover {
+      color: #a855f7;
+    }
+
+    /* HEADER */
+    .header {
+      text-align: center;
+      padding: 60px 20px 30px;
+    }
+
+    .header h1 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .header p {
+      color: #aaa;
+    }
+
+    /* CONTENT */
+    .content {
+      padding: 30px 0 60px;
+      line-height: 1.8;
+      font-size: 15px;
+      color: #ccc;
+    }
+
+    .content p {
+      margin-bottom: 18px;
+    }
+
+    .highlight {
+      color: #fff;
+      font-weight: 500;
+    }
+
+    /* CTA */
+    .cta {
+      text-align: center;
+      padding: 40px 20px;
+      background: #1a1a24;
+      border-radius: 15px;
+    }
+
+    .cta h2 {
+      margin-bottom: 10px;
+    }
+
+    .cta p {
+      color: #aaa;
+      margin-bottom: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 25px;
+      background: #a855f7;
+      color: #fff;
+      border-radius: 25px;
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid #222;
+      font-size: 13px;
+      color: #777;
+    }
+
   </style>
-  </head>
-<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 antialiased">
-<!-- Top Navigation -->
-<nav class="sticky top-0 z-50 border-b border-primary/10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="flex justify-between h-16 items-center">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-primary text-3xl">auto_awesome</span>
-<span class="text-xl font-bold tracking-tight text-slate-900 dark:text-white uppercase">Priya</span>
-</div>
-<div class="hidden md:flex space-x-8">
-<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">Home</a>
-<a class="text-primary font-semibold" href="#">About</a>
-<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">Ebook</a>
-<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">Blog</a>
-<a class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary transition-colors" href="#">Contact</a>
-</div>
-<div class="md:hidden">
-<span class="material-symbols-outlined text-slate-900 dark:text-white">menu</span>
-</div>
-</div>
-</div>
-</nav>
-<main>
-<!-- Hero Section -->
-<section class="relative overflow-hidden pt-16 pb-24 lg:pt-32 lg:pb-40">
-<div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 opacity-20">
-<div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary rounded-full blur-[120px]"></div>
-<div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-primary rounded-full blur-[120px]"></div>
-</div>
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-<div class="@container">
-<h1 class="text-5xl lg:text-7xl font-bold leading-tight mb-6">
-                            Hi, I'm <span class="text-primary">Priya</span> 👋
-                        </h1>
-<p class="text-xl lg:text-2xl text-slate-600 dark:text-slate-300 mb-8 leading-relaxed max-w-xl">
-                            Bridging the gap between scientific inquiry and spiritual wisdom to help you find inner clarity in a chaotic world.
-                        </p>
-<div class="flex gap-4">
-<button class="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-lg font-bold transition-all shadow-lg shadow-primary/20">
-                                Read the Ebook
-                            </button>
-<button class="border border-primary/30 hover:border-primary text-slate-900 dark:text-white px-8 py-4 rounded-lg font-bold transition-all">
-                                My Journey
-                            </button>
-</div>
-</div>
-<div class="relative group">
-<div class="absolute -inset-1 bg-gradient-to-r from-primary to-purple-400 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-<div class="relative bg-background-light dark:bg-background-dark rounded-2xl overflow-hidden aspect-square border border-primary/10">
-<img alt="Professional portrait of Priya" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="Professional portrait of Priya in soft lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDn_JiKXe7WvgAWSrovOBigmTCoQ-BeIXG4JhrkUyuO976TKMjYOA52b8zaaw2j2pMmTPKJ8orbbpbO1WnlsntAsDzC21Z-xndxhUIwSQ8D9zcWdTeDKzHNbkJV-_MJt4ToC6YWrl7iimv6P5AyRzKS34i5rgJr58va5eZSIYKVIaaU5JnRUNyPRLliQyuC9E6-Ud4eMI9NDxVABoi-JUC9oz2tKwrdhNbRiM2sy6nRp5e7eFzKG-tZ_iolas4CBFWGRKnl72YQEQaW"/>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- The Story -->
-<section class="py-24 bg-white/50 dark:bg-primary/5">
-<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-<span class="text-primary font-semibold tracking-widest uppercase text-sm mb-4 block">The Genesis</span>
-<h2 class="text-3xl lg:text-5xl font-bold mb-10">From Neural Pathways to Mindful Presence</h2>
-<div class="space-y-6 text-lg text-slate-600 dark:text-slate-300 leading-loose text-left">
-<p>
-                        My journey began in the sterile precision of the laboratory. I spent a decade analyzing neural pathways, fascinated by the biological machinery of the human brain. But while I understood the *how* of cognition, I found myself searching for the *why* of consciousness.
-                    </p>
-<p>
-                        I realized that data alone couldn't heal a restless spirit. It was only when I combined neuroscientific principles with ancient contemplative practices that I found a framework that truly resonates with the modern mind.
-                    </p>
-<p>
-                        Today, I translate complex science into spiritual wisdom, creating a roadmap for those who want to feel grounded without losing their intellectual edge.
-                    </p>
-</div>
-</div>
-</section>
-<!-- The Problem/Solution -->
-<section class="py-24">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-<div class="glass-card p-8 rounded-2xl border-l-4 border-primary">
-<div class="bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
-<span class="material-symbols-outlined text-primary">priority_high</span>
-</div>
-<h3 class="text-2xl font-bold mb-4">The Challenge</h3>
-<p class="text-slate-600 dark:text-slate-400">
-                            We live in an age of digital noise, chronic stress, and intellectual exhaustion. Our biological systems are constantly overwhelmed, leading to mental fog and a disconnection from our deeper selves.
-                        </p>
-</div>
-<div class="glass-card p-8 rounded-2xl border-l-4 border-emerald-500">
-<div class="bg-emerald-500/10 w-12 h-12 rounded-lg flex items-center justify-center mb-6">
-<span class="material-symbols-outlined text-emerald-500">verified</span>
-</div>
-<h3 class="text-2xl font-bold mb-4">The Science-Backed Solution</h3>
-<p class="text-slate-600 dark:text-slate-400">
-                            My ebook provides actionable protocols rooted in neuroplasticity and mindfulness. It's not just "positive thinking"—it's a systematic recalibration of your nervous system for lasting resilience.
-                        </p>
-</div>
-</div>
-</div>
-</section>
-<!-- Mission Statement -->
-<section class="py-24 relative">
-<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="bg-primary rounded-3xl p-12 lg:p-20 text-center text-white relative overflow-hidden">
-<div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-<div class="absolute inset-0" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 40px 40px;"></div>
-</div>
-<span class="text-primary-100 uppercase tracking-[0.3em] text-sm font-bold mb-6 block">Our Mission</span>
-<h2 class="text-3xl lg:text-5xl font-bold leading-tight italic">
-                        "To inspire young minds to master the architecture of their own consciousness, finding the sacred in the systematic."
-                    </h2>
-</div>
-</div>
-</section>
-<!-- Target Audience & CTA -->
-<section class="py-24">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="text-center mb-16">
-<h2 class="text-3xl lg:text-4xl font-bold mb-4">Is This For You?</h2>
-<p class="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">This work is designed for the curious, the seekers, and the skeptics who want more than just surface-level advice.</p>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-<div class="text-center p-6 border border-primary/10 rounded-xl bg-primary/5">
-<span class="material-symbols-outlined text-4xl text-primary mb-4">school</span>
-<h4 class="font-bold mb-2">Students</h4>
-<p class="text-sm text-slate-500">Harness focus and cognitive stamina for academic excellence.</p>
-</div>
-<div class="text-center p-6 border border-primary/10 rounded-xl bg-primary/5">
-<span class="material-symbols-outlined text-4xl text-primary mb-4">work</span>
-<h4 class="font-bold mb-2">Professionals</h4>
-<p class="text-sm text-slate-500">Build emotional intelligence and resilience in high-pressure roles.</p>
-</div>
-<div class="text-center p-6 border border-primary/10 rounded-xl bg-primary/5">
-<span class="material-symbols-outlined text-4xl text-primary mb-4">psychology</span>
-<h4 class="font-bold mb-2">Life Seekers</h4>
-<p class="text-sm text-slate-500">Deepen your meditation practice with biological insights.</p>
-</div>
-</div>
-<div class="mt-20 text-center">
-<div class="inline-block p-1 rounded-full bg-gradient-to-r from-primary to-purple-400">
-<button class="bg-background-light dark:bg-background-dark px-10 py-5 rounded-full font-bold text-lg hover:bg-transparent hover:text-white transition-all">
-                            Download the Free Chapter
-                        </button>
-</div>
-</div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="bg-slate-50 dark:bg-background-dark/50 border-t border-primary/10 py-16">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-12">
-<div class="col-span-1 md:col-span-2">
-<div class="flex items-center gap-2 mb-6">
-<span class="material-symbols-outlined text-primary text-3xl">auto_awesome</span>
-<span class="text-xl font-bold tracking-tight text-slate-900 dark:text-white uppercase">Priya</span>
-</div>
-<p class="text-slate-500 dark:text-slate-400 max-w-sm mb-6">
-                        Exploring the synergy between neural science and spiritual practice to unlock human potential.
-                    </p>
-<div class="flex space-x-4">
-<a class="w-10 h-10 rounded-full border border-primary/20 flex items-center justify-center text-slate-400 hover:text-primary hover:border-primary transition-all" href="#">
-<span class="material-symbols-outlined text-lg">public</span>
-</a>
-<a class="w-10 h-10 rounded-full border border-primary/20 flex items-center justify-center text-slate-400 hover:text-primary hover:border-primary transition-all" href="#">
-<span class="material-symbols-outlined text-lg">alternate_email</span>
-</a>
-<a class="w-10 h-10 rounded-full border border-primary/20 flex items-center justify-center text-slate-400 hover:text-primary hover:border-primary transition-all" href="#">
-<span class="material-symbols-outlined text-lg">share</span>
-</a>
-</div>
-</div>
-<div>
-<h5 class="font-bold mb-6 text-slate-900 dark:text-white">Resources</h5>
-<ul class="space-y-4 text-slate-500 dark:text-slate-400">
-<li><a class="hover:text-primary transition-colors" href="#">Free Ebook Chapter</a></li>
-<li><a class="hover:text-primary transition-colors" href="#">Scientific Papers</a></li>
-<li><a class="hover:text-primary transition-colors" href="#">Meditation Guides</a></li>
-<li><a class="hover:text-primary transition-colors" href="#">Newsletter</a></li>
-</ul>
-</div>
-<div>
-<h5 class="font-bold mb-6 text-slate-900 dark:text-white">Legal</h5>
-<ul class="space-y-4 text-slate-500 dark:text-slate-400">
-<li><a class="hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
-<li><a class="hover:text-primary transition-colors" href="#">Terms of Service</a></li>
-<li><a class="hover:text-primary transition-colors" href="#">Cookie Policy</a></li>
-</ul>
-</div>
-</div>
-<div class="mt-16 pt-8 border-t border-primary/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
-<p>© 2024 Priya. All rights reserved.</p>
-<p>Designed with intentionality for scientific seekers.</p>
-</div>
-</div>
-</footer>
-<!-- Mobile Navigation Bar -->
-<div class="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-background-light dark:bg-background-dark border-t border-primary/10 px-4 py-2 flex justify-around items-center">
-<a class="flex flex-col items-center gap-1 text-primary" href="#">
-<span class="material-symbols-outlined">home</span>
-<span class="text-[10px] font-medium">Home</span>
-</a>
-<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
-<span class="material-symbols-outlined">person</span>
-<span class="text-[10px] font-medium">About</span>
-</a>
-<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
-<span class="material-symbols-outlined">menu_book</span>
-<span class="text-[10px] font-medium">Ebook</span>
-</a>
-<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
-<span class="material-symbols-outlined">article</span>
-<span class="text-[10px] font-medium">Blog</span>
-</a>
-<a class="flex flex-col items-center gap-1 text-slate-400" href="#">
-<span class="material-symbols-outlined">mail</span>
-<span class="text-[10px] font-medium">Contact</span>
-</a>
-</div>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="container nav-flex">
+      <h2>GiggleThink</h2>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="ebook.html">Ebook</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <section class="header">
+    <div class="container">
+      <h1>About</h1>
+      <p>A simple approach to growth and clarity</p>
+    </div>
+  </section>
+
+  <!-- CONTENT -->
+  <section class="container content">
+    <p>
+      GiggleThink started with one simple idea — <span class="highlight">understanding yourself should not be complicated.</span>
+    </p>
+
+    <p>
+      A lot of advice today feels either too theoretical or too unrealistic. This platform focuses on practical thinking — ideas you can actually apply in your daily life.
+    </p>
+
+    <p>
+      The goal is not to overwhelm you with information, but to help you <span class="highlight">think clearly, act better, and grow consistently.</span>
+    </p>
+
+    <p>
+      The ebook is designed around this same philosophy — combining simple logic with deeper awareness, without making things feel complicated or abstract.
+    </p>
+
+    <p>
+      If you’re someone who prefers <span class="highlight">understanding over blind belief</span>, you’re in the right place.
+    </p>
+  </section>
+
+  <!-- CTA -->
+  <section class="container">
+    <div class="cta">
+      <h2>Start Your Journey</h2>
+      <p>Take the first step towards clarity and confidence.</p>
+      <a href="ebook.html" class="btn">Explore Ebook</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 GiggleThink. All rights reserved.
+  </footer>
+
 </body>
 </html>
