@@ -1,130 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WE85KYJP0Z"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-WE85KYJP0Z');
-</script>
-  <meta name="google-site-verification" content="1uOrP0ECuHmO3EDTjb7lHyka0bR6dLlDsju6OQx6BxE" />
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Ebook - Home</title>
-  <meta name="title" content="GiggleThink Free Ebooks">
-  <meta name="description" content="Download free self-help ebooks on AI, productivity, intuition, and personal growth.">
-  <meta name="keywords" content="free ebooks, self-help books, productivity, AI, intuition, psychology, GiggleThink">
-  <meta name="author" content="GiggleThink">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GiggleThink | Ebook</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    * {
       margin: 0;
       padding: 0;
-      background: #f9f9f9;
-      color: #333;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
     }
-    header {
-      background: #4b0082;
-      color: white;
-      padding: 20px;
-      text-align: center;
+
+    body {
+      background: #0f0f14;
+      color: #fff;
+      overflow-x: hidden; /* 🔥 prevents side scroll */
     }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    /* NAVBAR */
     nav {
+      padding: 20px 0;
+    }
+
+    .nav-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap; /* 🔥 FIX */
+    }
+
+    nav h2 {
+      font-weight: 600;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      flex-wrap: wrap; /* 🔥 FIX */
+      justify-content: center;
       margin-top: 10px;
     }
-    nav a {
-      margin: 0 15px;
-      color: white;
+
+    nav ul li a {
       text-decoration: none;
-      font-weight: bold;
+      color: #ccc;
+      font-size: 14px;
     }
-    nav a:hover {
-      text-decoration: underline;
+
+    nav ul li a:hover {
+      color: #a855f7;
     }
+
+    /* HERO */
     .hero {
-      background: linear-gradient(135deg, #6a0dad, #b19cd9);
-      color: white;
+      text-align: center;
       padding: 80px 20px;
-      text-align: center;
+      background: radial-gradient(circle at top, #2a0d46, #0f0f14);
     }
+
     .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
+      font-size: 36px;
+      margin-bottom: 15px;
     }
+
     .hero p {
-      font-size: 1.2rem;
-      margin-bottom: 30px;
-    }
-    .hero a {
-      background: white;
-      color: #4b0082;
-      padding: 12px 25px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      padding: 40px 20px;
-      background: #fff;
-    }
-    .feature {
-      flex: 1 1 250px;
-      margin: 15px;
-      padding: 20px;
-      background: #f0f0ff;
-      border-radius: 10px;
-      text-align: center;
-    }
-    footer {
-      background: #222;
       color: #aaa;
+      max-width: 600px;
+      margin: auto;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 25px;
+      background: #a855f7;
+      color: white;
+      border-radius: 30px;
+      text-decoration: none;
+    }
+
+    /* FEATURES */
+    .features {
+      padding: 60px 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #1a1a24;
+      padding: 25px;
+      border-radius: 15px;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    /* CTA */
+    .cta {
+      text-align: center;
+      padding: 60px 20px;
+    }
+
+    .cta h2 {
+      margin-bottom: 10px;
+    }
+
+    .cta p {
+      color: #aaa;
+    }
+
+    /* FOOTER */
+    footer {
       text-align: center;
       padding: 20px;
-      margin-top: 30px;
+      border-top: 1px solid #222;
+      font-size: 13px;
+      color: #777;
     }
+
+    /* 🔥 MOBILE FIXES */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 26px;
+      }
+
+      nav ul {
+        gap: 12px;
+      }
+
+      .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+    }
+
   </style>
 </head>
+
 <body>
-  <header>
-    <h1>My Ebook Website</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="ebook.html">Ebook</a>
-      <a href="blog.html">Blog</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
 
+  <!-- NAV -->
+  <nav>
+    <div class="container nav-flex">
+      <h2>GiggleThink</h2>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="ebook.html">Ebook</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- HERO -->
   <section class="hero">
-    <h1>Unlock Your Inner Strength</h1>
-    <p>Discover how science and spirituality can boost your focus, confidence, and mental power.</p>
-    <a href="ebook.html">📖 Get the Ebook</a>
+    <div class="container">
+      <h1>Unlock Your Inner Strength</h1>
+      <p>
+        A practical blend of science and spirituality to improve focus,
+        confidence, and mental clarity.
+      </p>
+      <a href="ebook.html" class="btn">Get the Ebook</a>
+    </div>
   </section>
 
+  <!-- FEATURES -->
   <section class="features">
-    <div class="feature">
-      <h2>✨ Science + Spirituality</h2>
-      <p>A unique blend of facts and feelings for a balanced life.</p>
-    </div>
-    <div class="feature">
-      <h2>🧠 Mental Clarity</h2>
-      <p>Learn how to sharpen focus and improve memory with simple practices.</p>
-    </div>
-    <div class="feature">
-      <h2>💪 Confidence Boost</h2>
-      <p>Practical tips to build self-belief and reduce stress.</p>
+    <div class="container grid">
+      <div class="card">
+        <h3>Science + Spirituality</h3>
+        <p>Balance logic and inner awareness for better decisions.</p>
+      </div>
+
+      <div class="card">
+        <h3>Mental Clarity</h3>
+        <p>Sharpen focus and reduce distractions with simple methods.</p>
+      </div>
+
+      <div class="card">
+        <h3>Confidence</h3>
+        <p>Build strong self-belief with practical techniques.</p>
+      </div>
     </div>
   </section>
 
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <h2>Start Your Growth Journey</h2>
+      <p>Small improvements daily lead to big results.</p>
+      <a href="ebook.html" class="btn">Explore Ebook</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer>
-    <p>© 2025 My Ebook Website | All Rights Reserved</p>
+    © 2026 GiggleThink. All rights reserved.
   </footer>
+
 </body>
 </html>
